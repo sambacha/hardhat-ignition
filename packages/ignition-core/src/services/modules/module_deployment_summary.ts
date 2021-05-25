@@ -6,13 +6,10 @@ import {
 import chalk from "chalk";
 import { BigNumber, ethers } from "ethers";
 
-import {
-  ContractBindingMetaData,
-  ContractInput,
-  StatefulEvent,
-  TxData,
-} from "../../interfaces/hardhat_ignition";
-import { ModuleStateFile } from "../types/module";
+import { ContractBindingMetaData } from "../../interfaces/models/contract";
+import { StatefulEvent } from "../../interfaces/models/events";
+import { ModuleStateFile } from "../../interfaces/types/module";
+import { ContractInput, TxData } from "../../interfaces/types/transaction";
 import { checkIfExist } from "../utils/util";
 
 import { ModuleStateRepo } from "./states/repo/state_repo";

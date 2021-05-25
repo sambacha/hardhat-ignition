@@ -4,11 +4,9 @@ import { Box, Newline, Text } from "ink";
 import Spinner from "ink-spinner";
 import React, { useEffect } from "react";
 
-import {
-  ContractBinding,
-  ContractEvent,
-  StatefulEvent,
-} from "../../../../../../interfaces/hardhat_ignition";
+import { ContractBinding } from "../../../../../../interfaces/models/contract";
+import { StatefulEvent } from "../../../../../../interfaces/models/events";
+import { ContractEvent } from "../../../../../../interfaces/types/events";
 import { ElementStatus, ElementWithStatus } from "../../../../../types/logger";
 import { checkIfExist } from "../../../../util";
 
@@ -137,7 +135,7 @@ function SubModuleElements({
 }) {
   return (
     <>
-      {subModuleDepth != "" ? (
+      {subModuleDepth !== "" ? (
         <Text>
           {" "}
           {">"} {subModuleDepth}
@@ -191,7 +189,7 @@ function fetchName(element: ContractBinding | StatefulEvent) {
 }
 
 function checkIfEmpty(data: string): boolean {
-  return data == "";
+  return data === "";
 }
 
 function getStatus(elementStatus: ElementStatus): boolean | JSX.Element {

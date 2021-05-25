@@ -1,12 +1,12 @@
 import chalk from "chalk";
 import { cli } from "cli-ux";
 
+import { ModuleState } from "../../../interfaces/types/module";
 import {
   CliError,
   handleMappedErrorCodes,
   UserError,
 } from "../../types/errors";
-import { ModuleState } from "../../types/module";
 
 export enum Logging {
   "empty" = "empty",

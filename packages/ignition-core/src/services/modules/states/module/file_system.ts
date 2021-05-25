@@ -1,7 +1,10 @@
 import fs from "fs";
 import path from "path";
 
-import { ModuleState, ModuleStateFile } from "../../../types/module";
+import {
+  ModuleState,
+  ModuleStateFile,
+} from "../../../../interfaces/types/module";
 import { Mutex } from "../../../utils/mutex/simple_mutex";
 import { ModuleStateRepo } from "../repo/state_repo";
 

@@ -1,7 +1,10 @@
 import { TransactionReceipt } from "@ethersproject/abstract-provider";
 
+import {
+  ModuleState,
+  ModuleStateFile,
+} from "../../../../interfaces/types/module";
 import { JsonFragmentType } from "../../../types/artifacts/abi";
-import { ModuleState, ModuleStateFile } from "../../../types/module";
 
 export interface IModuleStateRepo {
   initStateRepo(moduleName: string): void;

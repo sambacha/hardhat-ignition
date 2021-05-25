@@ -1,5 +1,4 @@
-import { EventType } from "../../../interfaces/hardhat_ignition";
-import { ModuleState } from "../../types/module";
+import { ModuleState } from "../../../interfaces/types/module";
 
 import { ILogging } from "./index";
 
@@ -22,10 +21,7 @@ export class EmptyLogger implements ILogging {
 
   public finishedBindingExecution(bindingName: string): void {}
 
-  public finishedEventExecution(
-    eventName: string,
-    eventType: EventType
-  ): void {}
+  public finishedEventExecution(eventName: string, eventType: string): void {}
 
   public finishedExecutionOfContractFunction(functionName: string): void {}
 

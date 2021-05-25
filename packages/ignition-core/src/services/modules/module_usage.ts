@@ -1,13 +1,13 @@
 import fs from "fs";
 import * as path from "path";
 
+import { ContractBindingMetaData } from "../../interfaces/models/contract";
 import {
-  ContractBindingMetaData,
   ModuleStateBindings,
-} from "../../interfaces/hardhat_ignition";
+  ModuleStateFile,
+} from "../../interfaces/types/module";
 import { CliError } from "../types/errors";
 import { FileGenerationType, ModuleFile } from "../types/migration";
-import { ModuleStateFile } from "../types/module";
 import { generateModuleFile } from "../utils/sol_files";
 import { checkIfExist, removeLastPathElement } from "../utils/util";
 

@@ -1,12 +1,12 @@
 import fs from "fs";
 import path from "path";
 
+import { ContractBindingMetaData } from "../../interfaces/models/contract";
 import {
-  ContractBindingMetaData,
   ModuleStateBindings,
-} from "../../interfaces/hardhat_ignition";
+  ModuleStateFile,
+} from "../../interfaces/types/module";
 import { FileGenerationType } from "../types/migration";
-import { ModuleStateFile } from "../types/module";
 import { generateModuleFile } from "../utils/sol_files";
 import { checkIfExist } from "../utils/util";
 

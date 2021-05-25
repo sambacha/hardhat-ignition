@@ -1,4 +1,4 @@
-import { EventType } from "../../interfaces/hardhat_ignition";
+import { EventType } from "../../interfaces/types/events";
 import { checkIfExist } from "../utils/util";
 
 import { DeploymentFileRepo } from "./deployment_file_repo";
@@ -46,7 +46,7 @@ export class DeploymentFileGenerator {
   public initEmptyModule(moduleName: string) {
     this.moduleName = moduleName;
 
-    const fileContent = this.generateModuleFile();
+    const fileContent = this._generateModuleFile();
 
     this.deploymentFileRepo.storeNewDeployment(fileContent);
   }
@@ -56,7 +56,7 @@ export class DeploymentFileGenerator {
     bindingName: string,
     ...args: any[]
   ) {
-    if (contractName != bindingName) {
+    if (contractName !== bindingName) {
       this.templates[bindingName] = {
         contractName,
       };
@@ -66,7 +66,7 @@ export class DeploymentFileGenerator {
       constructorArgs: args,
     };
 
-    const fileContent = this.generateModuleFile();
+    const fileContent = this._generateModuleFile();
 
     this.deploymentFileRepo.storeNewDeployment(fileContent);
   }
@@ -84,12 +84,12 @@ export class DeploymentFileGenerator {
       contractFunctionArgs: functionArgs,
     };
 
-    const fileContent = this.generateModuleFile();
+    const fileContent = this._generateModuleFile();
 
     this.deploymentFileRepo.storeNewDeployment(fileContent);
   }
 
-  private generateModuleFile() {
+  private _generateModuleFile() {
     let fileContent = `import { buildModule, ModuleBuilder } from '@tenderly/hardhat-ignition';
 
 /*

@@ -1,14 +1,13 @@
 import chalk from "chalk";
 import { SingleBar } from "cli-progress";
 import cli from "cli-ux";
+import { ModuleState } from '../../../interfaces/types/module';
 
-import { EventType } from "../../../interfaces/hardhat_ignition";
 import {
   CliError,
   DeniedConfirmation,
   ModuleContextMissingInLogger,
 } from "../../types/errors";
-import { ModuleState } from "../../types/module";
 import { checkIfExist } from "../util";
 
 import { FileLogging } from "./file_logging";
@@ -170,16 +169,16 @@ export class SimpleOverviewLogger extends FileLogging implements ILogging {
     cli.info(summary);
   }
 
-  public finishedEventExecution(eventName: string, eventType: EventType): void {
+  public finishedEventExecution(eventName: string, eventType: string): void {
     super.finishedEventExecution(eventName, eventType);
 
-    this.handleElementCompletion(eventName);
+    this._handleElementCompletion(eventName);
   }
 
   public finishedBindingExecution(bindingName: string): void {
     super.finishedBindingExecution(bindingName);
 
-    this.handleElementCompletion(bindingName);
+    this._handleElementCompletion(bindingName);
   }
 
   public finishedExecutionOfContractFunction(functionName: string): void {
@@ -311,7 +310,7 @@ export class SimpleOverviewLogger extends FileLogging implements ILogging {
 
   public finishModuleResolving(): void {}
 
-  private handleElementCompletion(elementName: string): void {
+  private _handleElementCompletion(elementName: string): void {
     if (!this?.currentModuleName) {
       throw new ModuleContextMissingInLogger();
     }

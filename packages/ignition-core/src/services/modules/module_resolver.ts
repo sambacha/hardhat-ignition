@@ -5,13 +5,15 @@ import { ethers } from "ethers";
 import {
   ContractBinding,
   ContractBindingMetaData,
+} from "../../interfaces/models/contract";
+import { StatefulEvent } from "../../interfaces/models/events";
+import { EventsDepRef, ModuleEvents } from "../../interfaces/types/contract";
+import {
   ContractEvent,
   Events,
-  EventsDepRef,
   ModuleEvent,
-  ModuleEvents,
-  StatefulEvent,
-} from "../../interfaces/hardhat_ignition";
+} from "../../interfaces/types/events";
+import { ModuleState, ModuleStateFile } from "../../interfaces/types/module";
 import { EthClient } from "../ethereum/client";
 import { ITransactionGenerator } from "../ethereum/transactions";
 import { EventTxExecutor } from "../ethereum/transactions/event_executor";
@@ -25,7 +27,6 @@ import {
   ModuleStateMismatchError,
   UsageEventNotFound,
 } from "../types/errors";
-import { ModuleState, ModuleStateFile } from "../types/module";
 import { ILogging } from "../utils/logging";
 import { checkIfExist, isSameBytecode } from "../utils/util";
 

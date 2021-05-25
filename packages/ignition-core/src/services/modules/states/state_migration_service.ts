@@ -1,10 +1,9 @@
 import path from "path";
 
-import {
-  ContractBindingMetaData,
-  Deployed,
-  TxData,
-} from "../../../interfaces/hardhat_ignition";
+import { ContractBindingMetaData } from "../../../interfaces/models/contract";
+import { Deployed } from "../../../interfaces/types/contract";
+import { ModuleStateFile } from "../../../interfaces/types/module";
+import { TxData } from "../../../interfaces/types/transaction";
 import { CliError } from "../../types/errors";
 import {
   Build,
@@ -12,7 +11,6 @@ import {
   Migration,
   TruffleBuild,
 } from "../../types/migration";
-import { ModuleStateFile } from "../../types/module";
 import { searchBuilds, searchBuildsAndNetworks } from "../../utils/sol_files";
 import { checkIfExist } from "../../utils/util";
 

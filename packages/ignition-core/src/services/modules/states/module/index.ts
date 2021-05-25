@@ -1,4 +1,7 @@
-import { ModuleState, ModuleStateFile } from "../../../types/module";
+import {
+  ModuleState,
+  ModuleStateFile,
+} from "../../../../interfaces/types/module";
 
 export const STATE_DIR_NAME = ".hardhat-ignition";
 export const STATE_NAME = "deployed_module_state.json";

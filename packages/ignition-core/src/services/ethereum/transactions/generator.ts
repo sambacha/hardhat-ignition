@@ -1,10 +1,10 @@
 import { BigNumber, ethers, providers } from "ethers";
 
-import { ContractBinding } from "../../../interfaces/hardhat_ignition";
+import { ContractBinding } from "../../../interfaces/models/contract";
+import { ModuleState } from "../../../interfaces/types/module";
 import { SingleContractLinkReference } from "../../types/artifacts/libraries";
 import { GasPriceBackoff } from "../../types/config";
 import { CliError, GasPriceBackoffError } from "../../types/errors";
-import { ModuleState } from "../../types/module";
 import { ILogging } from "../../utils/logging";
 import { checkIfExist, delay } from "../../utils/util";
 import { IGasCalculator, IGasPriceCalculator } from "../gas";

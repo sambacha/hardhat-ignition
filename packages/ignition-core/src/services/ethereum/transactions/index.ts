@@ -1,7 +1,7 @@
 import { BigNumber, ethers } from "ethers";
 
+import { ModuleState } from "../../../interfaces/types/module";
 import { SingleContractLinkReference } from "../../types/artifacts/libraries";
-import { ModuleState } from "../../types/module";
 import { IGasPriceCalculator } from "../gas";
 
 export interface TxMetaData {

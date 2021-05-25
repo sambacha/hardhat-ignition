@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-import { Module } from "../../../interfaces/hardhat_ignition";
+import { Module } from "../../../interfaces/models/module";
 
 export class ModuleTypings {
   constructor() {}
@@ -11,7 +11,7 @@ export class ModuleTypings {
     moduleName: string,
     module: Module | undefined
   ) {
-    if (module == undefined) {
+    if (module === undefined) {
       return;
     }
 

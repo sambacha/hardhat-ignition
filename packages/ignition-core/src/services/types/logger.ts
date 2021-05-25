@@ -1,7 +1,5 @@
-import {
-  ContractBinding,
-  StatefulEvent,
-} from "../../interfaces/hardhat_ignition";
+import { ContractBinding } from "../../interfaces/models/contract";
+import { StatefulEvent } from "../../interfaces/models/events";
 
 export enum ElementStatus {
   "EMPTY" = "EMPTY",
@@ -9,6 +7,7 @@ export enum ElementStatus {
   "SUCCESSFULLY" = "SUCCESSFULLY",
 }
 
+// @TODO move this also?
 export interface ElementWithStatus {
   element: ContractBinding | StatefulEvent;
   status: ElementStatus;

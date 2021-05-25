@@ -3,10 +3,10 @@ import { cli } from "cli-ux";
 import { render } from "ink";
 import React, { ReactNode } from "react";
 
-import { EventType } from "../../../../interfaces/hardhat_ignition";
+import { EventType } from "../../../../interfaces/types/events";
+import { ModuleState } from "../../../../interfaces/types/module";
 import { ModuleContextMissingInLogger } from "../../../types/errors";
 import { ElementStatus, ElementWithStatus } from "../../../types/logger";
-import { ModuleState } from "../../../types/module";
 import { getIgnitionVersion } from "../../package_info";
 import { checkIfExist } from "../../util";
 import { FileLogging } from "../file_logging";
@@ -190,7 +190,7 @@ export class OverviewLogger extends FileLogging implements ILogging {
     );
   }
 
-  public finishedEventExecution(eventName: string, eventType: EventType): void {
+  public finishedEventExecution(eventName: string, eventType: string): void {
     super.finishedEventExecution(eventName, eventType);
     if (eventType === EventType.OnFail) {
       return;

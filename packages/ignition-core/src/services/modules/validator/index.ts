@@ -1,5 +1,5 @@
+import { ModuleBindings } from "../../../interfaces/types/module";
 import { JsonFragment } from "../../types/artifacts/abi";
-import { ModuleBindings } from "../../types/module";
 
 export interface IModuleValidator {
   validate(

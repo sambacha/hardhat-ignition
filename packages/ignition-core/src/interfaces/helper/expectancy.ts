@@ -6,7 +6,7 @@ import {
   ValueMismatch,
 } from "../../services/types/errors";
 import { checkIfExist } from "../../services/utils/util";
-import { ContractBinding } from "../hardhat_ignition";
+import { ContractBinding } from "../models/contract";
 
 /**
  * This function is checking if `get_StorageAt` call for `slot` in `contract` is same as `expectedValue`.
@@ -36,7 +36,7 @@ export async function expectSlotRead(
     const address = expectedValue.deployMetaData.contractAddress.toLowerCase();
     const slotAddress = "0x" + value.substr(26);
 
-    if (slotAddress == address) {
+    if (slotAddress === address) {
       return true;
     }
   }
@@ -44,15 +44,15 @@ export async function expectSlotRead(
   if (
     checkIfExist(value.length) &&
     checkIfExist(expectedValue.length) &&
-    value.length != 0 &&
-    expectedValue.length != 0
+    value.length !== 0 &&
+    expectedValue.length !== 0
   ) {
-    if (value.length != expectedValue.length) {
+    if (value.length !== expectedValue.length) {
       throw new ValueMismatch(expectedValue, value);
     }
 
     for (let i = 0; i < value.length; i++) {
-      if (value[i] != expectedValue[i]) {
+      if (value[i] !== expectedValue[i]) {
         throw new ValueMismatch(expectedValue, value);
       }
     }
@@ -72,7 +72,7 @@ export async function expectSlotRead(
     }
   }
 
-  if (expectedValue == value) {
+  if (expectedValue === value) {
     return true;
   }
 
@@ -105,7 +105,7 @@ export async function expectFuncRead(
 
   if (
     expectedValue._isContractBinding &&
-    value == expectedValue.deployMetaData.contractAddress
+    value === expectedValue.deployMetaData.contractAddress
   ) {
     return true;
   }
@@ -113,15 +113,15 @@ export async function expectFuncRead(
   if (
     checkIfExist(value.length) &&
     checkIfExist(expectedValue.length) &&
-    value.length != 0 &&
-    expectedValue.length != 0
+    value.length !== 0 &&
+    expectedValue.length !== 0
   ) {
-    if (value.length != expectedValue.length) {
+    if (value.length !== expectedValue.length) {
       throw new ValueMismatch(expectedValue, value);
     }
 
     for (let i = 0; i < value.length; i++) {
-      if (value[i] != expectedValue[i]) {
+      if (value[i] !== expectedValue[i]) {
         throw new ValueMismatch(expectedValue, value);
       }
     }
@@ -153,7 +153,7 @@ export async function expectFuncRead(
     }
   }
 
-  if (expectedValue == value) {
+  if (expectedValue === value) {
     return true;
   }
 
@@ -181,7 +181,7 @@ export async function gracefulExpectFuncRead(
 
   if (
     expectedValue._isContractBinding &&
-    value == expectedValue.deployMetaData.contractAddress
+    value === expectedValue.deployMetaData.contractAddress
   ) {
     return true;
   }
@@ -189,15 +189,15 @@ export async function gracefulExpectFuncRead(
   if (
     checkIfExist(value.length) &&
     checkIfExist(expectedValue.length) &&
-    value.length != 0 &&
-    expectedValue.length != 0
+    value.length !== 0 &&
+    expectedValue.length !== 0
   ) {
-    if (value.length != expectedValue.length) {
+    if (value.length !== expectedValue.length) {
       return false;
     }
 
     for (let i = 0; i < value.length; i++) {
-      if (value[i] != expectedValue[i]) {
+      if (value[i] !== expectedValue[i]) {
         return false;
       }
     }
@@ -229,7 +229,7 @@ export async function gracefulExpectFuncRead(
     }
   }
 
-  return expectedValue == value;
+  return expectedValue === value;
 }
 
 /**
@@ -240,7 +240,7 @@ export async function gracefulExpectFuncRead(
  * @returns boolean
  */
 export function expect(firstValue: any, secondValue: any): boolean {
-  if (firstValue == secondValue) {
+  if (firstValue === secondValue) {
     return true;
   }
 
@@ -256,5 +256,5 @@ export function expect(firstValue: any, secondValue: any): boolean {
  * @returns boolean
  */
 export function gracefulExpect(firstValue: any, secondValue: any): boolean {
-  return firstValue == secondValue;
+  return firstValue === secondValue;
 }

@@ -1,11 +1,9 @@
 import { ethers } from "ethers";
 
 import { checkIfExist } from "../../services/utils/util";
-import {
-  ContractBinding,
-  ContractEvent,
-  ModuleBuilder,
-} from "../hardhat_ignition";
+import { ContractBinding } from "../models/contract";
+import { ModuleBuilder } from "../models/module";
+import { ContractEvent } from "../types/events";
 
 import { expectFuncRead, expectSlotRead } from "./expectancy";
 

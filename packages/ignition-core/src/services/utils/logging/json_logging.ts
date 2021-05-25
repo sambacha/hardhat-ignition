@@ -1,7 +1,6 @@
 import { cli } from "cli-ux";
 
-import { EventType } from "../../../interfaces/hardhat_ignition";
-import { ModuleState } from "../../types/module";
+import { ModuleState } from "../../../interfaces/types/module";
 
 import { generateErrorMessage, ILogging } from "./index";
 
@@ -102,7 +101,7 @@ export class JsonLogger implements ILogging {
     );
   }
 
-  public finishedEventExecution(eventName: string, eventType: EventType): void {
+  public finishedEventExecution(eventName: string, eventType: string): void {
     cli.info(
       JSON.stringify({
         name: "Finished event execution",

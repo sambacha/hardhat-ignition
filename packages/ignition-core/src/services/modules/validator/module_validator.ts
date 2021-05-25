@@ -1,4 +1,4 @@
-import { ContractBinding } from "../../../interfaces/hardhat_ignition";
+import { ContractBinding } from "../../../interfaces/models/contract";
 import { JsonFragment } from "../../types/artifacts/abi";
 import { handleTypes } from "../../types/checker";
 import { AbiMismatch, MissingContractMetadata } from "../../types/errors";

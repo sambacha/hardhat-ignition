@@ -1,9 +1,8 @@
 import chalk from "chalk";
 import cli from "cli-ux";
 
-import { EventType } from "../../../interfaces/hardhat_ignition";
+import { ModuleState } from "../../../interfaces/types/module";
 import { DeniedConfirmation } from "../../types/errors";
-import { ModuleState } from "../../types/module";
 
 import { generateErrorMessage, ILogging } from "./index";
 
@@ -38,7 +37,7 @@ export class StreamlinedLogger implements ILogging {
   }
 
   public finishModuleDeploy(moduleName: string, summary: string): void {
-    this.finishedElementExecution();
+    this._finishedElementExecution();
     cli.info(summary);
   }
 
@@ -106,7 +105,7 @@ export class StreamlinedLogger implements ILogging {
   }
 
   public finishedBindingExecution(bindingName: string): void {
-    this.finishedElementExecution();
+    this._finishedElementExecution();
     cli.info(
       `${this.whitespaces}${chalk.bold(
         "Finished"
@@ -122,8 +121,8 @@ export class StreamlinedLogger implements ILogging {
     this.whitespaces += "  ";
   }
 
-  public finishedEventExecution(eventName: string, eventType: EventType): void {
-    this.finishedElementExecution();
+  public finishedEventExecution(eventName: string, eventType: string): void {
+    this._finishedElementExecution();
     cli.info(
       `${this.whitespaces}${chalk.bold(
         "Finished"
@@ -141,7 +140,7 @@ export class StreamlinedLogger implements ILogging {
   }
 
   public finishedExecutionOfContractFunction(functionName: string): void {
-    this.finishedElementExecution();
+    this._finishedElementExecution();
     cli.info(
       `${this.whitespaces}${chalk.bold(
         "Finished"
@@ -160,7 +159,7 @@ export class StreamlinedLogger implements ILogging {
   }
 
   public finishedExecutionOfWalletTransfer(from: string, to: string): void {
-    this.finishedElementExecution();
+    this._finishedElementExecution();
     cli.info(
       this.whitespaces +
         `${chalk.bold("Finished")} execution of wallet transfer - ${chalk.bold(
@@ -231,7 +230,7 @@ export class StreamlinedLogger implements ILogging {
     ...args: any[]
   ): void {}
 
-  private finishedElementExecution(): void {
+  private _finishedElementExecution(): void {
     this.whitespaces = this.whitespaces.slice(0, -2);
   }
 }

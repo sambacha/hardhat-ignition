@@ -6,22 +6,22 @@ import {
 import { Namespace } from "cls-hooked";
 import { BigNumber, providers } from "ethers";
 
+import { ContractBinding } from "../../../interfaces/models/contract";
+import { StatefulEvent } from "../../../interfaces/models/events";
+import { Deployed } from "../../../interfaces/types/contract";
 import {
   AfterCompileEvent,
   AfterDeployEvent,
   BeforeCompileEvent,
   BeforeDeployEvent,
-  ContractBinding,
   ContractEvent,
-  Deployed,
   Event,
   EventType,
-  ModuleConfig,
   ModuleEvent,
   OnChangeEvent,
-  StatefulEvent,
-  TransactionData,
-} from "../../../interfaces/hardhat_ignition";
+} from "../../../interfaces/types/events";
+import { ModuleConfig, ModuleState } from "../../../interfaces/types/module";
+import { TransactionData } from "../../../interfaces/types/transaction";
 import { Batcher } from "../../modules/events/batcher";
 import { EventHandler } from "../../modules/events/handler";
 import { ModuleResolver } from "../../modules/module_resolver";
@@ -36,7 +36,6 @@ import {
   NoContractBindingDataInModuleState,
   TransactionFailed,
 } from "../../types/errors";
-import { ModuleState } from "../../types/module";
 import { clsNamespaces } from "../../utils/continuation_local_storage";
 import { ILogging } from "../../utils/logging";
 import { checkIfExist } from "../../utils/util";
@@ -107,6 +106,7 @@ export class TxExecutor {
       }
     }
   }
+
   private readonly networkId: string;
   private readonly parallelize: boolean;
 

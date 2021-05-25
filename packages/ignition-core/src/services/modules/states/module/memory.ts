@@ -1,4 +1,4 @@
-import { ModuleState, ModuleStateFile } from "../../../types/module";
+import { ModuleState, ModuleStateFile } from '../../../../interfaces/types/module';
 import { checkIfExist, copyValue } from "../../../utils/util";
 import { ModuleStateRepo } from "../repo/state_repo";
 

@@ -2,7 +2,8 @@ import { cli } from "cli-ux";
 import * as cls from "cls-hooked";
 import { ethers } from "ethers";
 
-import { Module, ModuleParams } from "./interfaces/hardhat_ignition";
+import { Module } from "./interfaces/models";
+import { ModuleParams, ModuleState } from "./interfaces/types";
 import { GlobalConfigService } from "./services/config";
 import { EthClient } from "./services/ethereum/client";
 import { ICompiler } from "./services/ethereum/compiler";
@@ -30,7 +31,6 @@ import { IModuleValidator } from "./services/modules/validator";
 import { ModuleValidator } from "./services/modules/validator/module_validator";
 import { GasPriceBackoff } from "./services/types/config";
 import { EmptySigners, ServicesNotInitialized } from "./services/types/errors";
-import { ModuleState } from "./services/types/module";
 import { IErrorReporting } from "./services/utils/analytics";
 import { ErrorReporter } from "./services/utils/analytics/analytics_service";
 import {
@@ -43,10 +43,11 @@ import { EmptyLogger } from "./services/utils/logging/empty_logging";
 import { OverviewLogger } from "./services/utils/logging/react-terminal";
 import { checkIfExist, errorHandling } from "./services/utils/util";
 
-export * from "./interfaces/hardhat_ignition";
-export * from "./interfaces/module_builders";
+export * from "./interfaces/models";
+export * from "./interfaces/types";
 export * from "./interfaces/helper/expectancy";
 export * from "./interfaces/helper/macros";
+export * from "./interfaces/module_builders";
 
 export * from "./services/config";
 export * from "./services/types";
@@ -83,7 +84,6 @@ export * from "./services/config";
 export * from "./services/types";
 export * from "./services/types/config";
 export * from "./services/utils/analytics";
-export * from "./services/types/module";
 
 export interface DiffArgs {
   moduleFilePath?: string;

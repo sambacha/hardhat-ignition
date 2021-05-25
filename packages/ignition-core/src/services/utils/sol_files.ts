@@ -2,7 +2,7 @@ import { cli } from "cli-ux";
 import * as fs from "fs";
 import * as path from "path";
 
-import { ModuleStateBindings } from "../../interfaces/hardhat_ignition";
+import { ModuleStateBindings } from "../../interfaces/types/module";
 import { CliError } from "../types/errors";
 import {
   FileGenerationType,

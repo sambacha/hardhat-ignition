@@ -1,9 +1,10 @@
+import { ContractBinding } from "../../../interfaces/models/contract";
+import { StatefulEvent } from "../../../interfaces/models/events";
 import {
   AfterCompileEvent,
   AfterDeployEvent,
   BeforeCompileEvent,
   BeforeDeployEvent,
-  ContractBinding,
   EventFn,
   EventFnCompiled,
   EventFnDeployed,
@@ -11,10 +12,9 @@ import {
   ModuleEvent,
   ModuleEventFn,
   OnChangeEvent,
-  StatefulEvent,
-} from "../../../interfaces/hardhat_ignition";
+} from "../../../interfaces/types/events";
+import { ModuleState } from "../../../interfaces/types/module";
 import { CliError, EventExecutionError } from "../../types/errors";
-import { ModuleState } from "../../types/module";
 import { ILogging } from "../../utils/logging";
 import { checkIfExist } from "../../utils/util";
 import { ModuleStateRepo } from "../states/repo/state_repo";

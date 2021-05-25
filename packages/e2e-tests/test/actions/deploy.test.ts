@@ -1,11 +1,9 @@
 import { assert } from "chai";
-import { execSync } from "child_process";
 import { loadScript } from "common";
 import { ethers } from "ethers";
 import {
   ContractBindingMetaData,
   DEPLOYMENT_FOLDER,
-  Module,
 } from "ignition-core";
 import { IgnitionTests } from "ignition-test";
 import * as path from "path";

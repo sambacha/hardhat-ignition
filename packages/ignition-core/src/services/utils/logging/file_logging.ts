@@ -1,11 +1,10 @@
 import * as fs from "fs";
 import * as path from "path";
 import { ILogObject, Logger } from "tslog";
+import { ModuleState } from '../../../interfaces/types/module';
 
-import { EventType } from "../../../interfaces/hardhat_ignition";
 import { DEPLOYMENT_FOLDER } from "../../tutorial/tutorial_service";
 import { ModuleContextMissingInLogger } from "../../types/errors";
-import { ModuleState } from "../../types/module";
 
 import { generateErrorMessage, ILogging } from "./index";
 
@@ -145,7 +144,7 @@ export class FileLogging implements ILogging {
     });
   }
 
-  public finishedEventExecution(eventName: string, eventType: EventType): void {
+  public finishedEventExecution(eventName: string, eventType: string): void {
     if (!this.moduleName) {
       throw new ModuleContextMissingInLogger();
     }
