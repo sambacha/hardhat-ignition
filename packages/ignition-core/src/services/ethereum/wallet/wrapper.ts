@@ -1,7 +1,7 @@
 import { Namespace } from "cls-hooked";
 import { ethers } from "ethers";
-import { IgnitionSigner } from '../../../interfaces/models/signer';
 
+import { IgnitionSigner } from "../../../interfaces/models/signer";
 import { ModuleStateRepo } from "../../modules/states/repo/state_repo";
 import { ILogging } from "../../utils/logging";
 import { IGasCalculator, IGasPriceCalculator } from "../gas";

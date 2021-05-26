@@ -1,8 +1,11 @@
 import { ethers } from "ethers";
 
-import { ContractBinding, ContractBindingMetaData } from "../models/contract";
-import { StatefulEvent } from '../models/events';
-import { ModuleBuilder } from "../models/module";
+import {
+  ContractBinding,
+  ContractBindingMetaData,
+  ModuleBuilder,
+  StatefulEvent,
+} from "../models";
 
 export interface ModuleParams {
   [name: string]: any;

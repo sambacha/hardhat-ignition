@@ -2,7 +2,6 @@ import { Namespace } from "cls-hooked";
 
 import { JsonFragment } from "../../services/types/artifacts/abi";
 import { ShouldRedeployAlreadyDefinedError } from "../../services/types/errors";
-import { SearchParams, ShouldRedeployFn } from "../types/contract";
 import {
   AfterCompileEvent,
   AfterDeployEvent,
@@ -15,10 +14,12 @@ import {
   EventType,
   OnChangeEvent,
   RedeployFn,
-} from "../types/events";
+  SearchParams,
+  ShouldRedeployFn,
+} from "../types";
 
 import { ContractBinding } from "./contract";
-import { ModuleBuilder } from "./module";
+import { ModuleBuilder } from "./module_builder";
 
 export class GroupedDependencies {
   public dependencies: Array<ContractBinding | ContractEvent>;

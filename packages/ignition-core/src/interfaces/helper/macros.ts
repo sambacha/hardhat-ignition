@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 
 import { checkIfExist } from "../../services/utils/util";
 import { ContractBinding } from "../models/contract";
-import { ModuleBuilder } from "../models/module";
+import { ModuleBuilder } from '../models/module_builder';
 import { ContractEvent } from "../types/events";
 
 import { expectFuncRead, expectSlotRead } from "./expectancy";

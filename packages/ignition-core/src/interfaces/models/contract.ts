@@ -48,7 +48,7 @@ import {
   TransactionData,
 } from "../types";
 
-import { ModuleBuilder } from "./module";
+import { ModuleBuilder } from "./module_builder";
 
 export abstract class Binding {
   public name: string;

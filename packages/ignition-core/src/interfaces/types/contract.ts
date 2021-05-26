@@ -1,12 +1,6 @@
 import { TransactionReceipt } from "@ethersproject/abstract-provider";
-import { ElementStatus } from '../../services/types/logger';
 
-import {
-  Binding,
-  ContractBinding,
-  ContractBindingMetaData,
-} from "../models/contract";
-import { StatefulEvent } from '../models/events';
+import { Binding, ContractBinding, ContractBindingMetaData } from "../models";
 
 import { ModuleEvent } from "./events";
 

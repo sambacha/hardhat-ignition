@@ -1,4 +1,4 @@
-import { ActionFn } from "../types/action";
+import { ActionFn } from "../types";
 
 export class Action {
   public name: string;

@@ -1,8 +1,8 @@
 import chalk from "chalk";
 import { SingleBar } from "cli-progress";
 import cli from "cli-ux";
-import { ModuleState } from '../../../interfaces/types/module';
 
+import { ModuleState } from "../../../interfaces/types/module";
 import {
   CliError,
   DeniedConfirmation,

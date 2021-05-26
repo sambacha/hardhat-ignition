@@ -1,5 +1,4 @@
-import { ContractBinding } from "../models/contract";
-import { StatefulEvent } from "../models/events";
+import { ContractBinding, StatefulEvent } from "../models";
 
 export type RedeployFn = (...deps: ContractBinding[]) => Promise<void>;
 export type EventFnDeployed = () => Promise<void>;

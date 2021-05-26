@@ -1,11 +1,24 @@
 import { TransactionReceipt } from "@ethersproject/abstract-provider";
-import { ContractBinding, ContractBindingMetaData } from '../../../../interfaces/models/contract';
-import { StatefulEvent } from '../../../../interfaces/models/events';
-import { Deployed } from '../../../../interfaces/types/contract';
-import { ContractEvent, EventType, MetaDataEvent } from '../../../../interfaces/types/events';
-import { ModuleState, ModuleStateFile } from '../../../../interfaces/types/module';
-import { ContractInput, EventTransactionData } from '../../../../interfaces/types/transaction';
 
+import {
+  ContractBinding,
+  ContractBindingMetaData,
+} from "../../../../interfaces/models/contract";
+import { StatefulEvent } from "../../../../interfaces/models/events";
+import { Deployed } from "../../../../interfaces/types/contract";
+import {
+  ContractEvent,
+  EventType,
+  MetaDataEvent,
+} from "../../../../interfaces/types/events";
+import {
+  ModuleState,
+  ModuleStateFile,
+} from "../../../../interfaces/types/module";
+import {
+  ContractInput,
+  EventTransactionData,
+} from "../../../../interfaces/types/transaction";
 import { CliError } from "../../../types/errors";
 import { checkIfExist } from "../../../utils/util";
 import { IModuleState, IModuleStateCleanup } from "../module";

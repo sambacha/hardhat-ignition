@@ -1,10 +1,7 @@
 import { assert } from "chai";
 import { loadScript } from "common";
 import { ethers } from "ethers";
-import {
-  ContractBindingMetaData,
-  DEPLOYMENT_FOLDER,
-} from "ignition-core";
+import { ContractBindingMetaData, DEPLOYMENT_FOLDER } from "ignition-core";
 import { IgnitionTests } from "ignition-test";
 import * as path from "path";
 

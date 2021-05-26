@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
 import { ILogObject, Logger } from "tslog";
-import { ModuleState } from '../../../interfaces/types/module';
 
+import { ModuleState } from "../../../interfaces/types/module";
 import { DEPLOYMENT_FOLDER } from "../../tutorial/tutorial_service";
 import { ModuleContextMissingInLogger } from "../../types/errors";
 

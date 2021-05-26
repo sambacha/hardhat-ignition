@@ -1,5 +1,4 @@
-import { Event } from "../types/events";
-import { EventTransactionData } from "../types/transaction";
+import { Event, EventTransactionData } from "../types";
 
 export class StatefulEvent {
   public _isStatefulEvent: boolean = true;

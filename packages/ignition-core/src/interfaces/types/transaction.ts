@@ -1,5 +1,9 @@
-import { TransactionReceipt, TransactionResponse } from '@ethersproject/abstract-provider';
-import { JsonFragmentType } from '../../services/types/artifacts/abi';
+import {
+  TransactionReceipt,
+  TransactionResponse,
+} from "@ethersproject/abstract-provider";
+
+import { JsonFragmentType } from "../../services/types/artifacts/abi";
 
 export interface TxData {
   from: string;

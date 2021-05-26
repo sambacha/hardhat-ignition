@@ -1,3 +1,5 @@
+import { Module } from "../models";
+import { ModuleBuilderFn, ModuleConfig } from "../types";
 /**
  * This function is instantiating module class that will be used by hardhat-ignition in order to read user defined contracts and
  * events in order. This is not intended to be a valid deployment module, but rather to be used only as a sub-module
@@ -7,9 +9,6 @@
  * @param fn Function that will be used to build module.
  * @param moduleConfig Deployment module config, defines which bindings would be skipped.
  */
-import { Module } from "../models/module";
-import { ModuleBuilderFn, ModuleConfig } from "../types/module";
-
 export async function buildUsage(
   moduleName: string,
   fn: ModuleBuilderFn,
